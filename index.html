@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Krishan Enterprises — Product Catalogue">
+  <title>Krishan Enterprises | Product Catalogue</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top">
+      <img src="assets/logo.png" alt="Krishan Enterprises logo" onerror="this.style.display='none'">
+      <span>KRISHAN ENTERPRISES</span>
+    </a>
+    <span class="top-label">WHOLESALE</span>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="eyebrow">2026 EDITION</div>
+      <h1>Product<br><em>Catalogue</em></h1>
+      <p>Imported products, gifting, décor, festive essentials and everyday products for wholesale buyers.</p>
+      <div class="stats">
+        <div><strong id="productCount">0</strong><span>Products</span></div>
+        <div><strong id="categoryCount">10</strong><span>Categories</span></div>
+        <div><strong>INDIA</strong><span>Wholesale</span></div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">BROWSE BY CATEGORY</div>
+          <h2>Explore our catalogue</h2>
+        </div>
+        <span class="hint">Tap to open</span>
+      </div>
+      <div id="categoryGrid" class="category-grid"></div>
+    </section>
+
+    <section id="catalogueArea"></section>
+  </main>
+
+  <div id="productModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" onclick="closeModal()"></div>
+    <div class="modal-card">
+      <button class="close-btn" onclick="closeModal()" aria-label="Close">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
