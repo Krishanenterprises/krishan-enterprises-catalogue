@@ -6,7 +6,7 @@ const modalContent = document.getElementById("modalContent");
 function imageFallback(img){
   img.onerror = () => {
     img.onerror = null;
-    img.src = "assets/images/placeholder.jpg";
+    img.src = "placeholder.svg";
   };
 }
 
@@ -21,7 +21,6 @@ function renderCategories(){
       </div>
     </article>`;
   }).join("");
-  categoryGrid.querySelectorAll("img").forEach(imageFallback);
 }
 
 function openCategory(id){
@@ -55,7 +54,6 @@ function productRows(list){
       <div>
         <div class="product-name">${p.name}<span class="product-code">${p.id}</span></div>
       </div>
-      <div class="product-price">₹${p.price}<span class="product-unit">${p.unit}</span></div>
       <div class="arrow">›</div>
     </article>`).join("");
 }
@@ -72,11 +70,6 @@ function openProduct(id){
     <div class="modal-code">${p.id}</div>
     <h3 class="modal-title">${p.name}</h3>
     <div class="specs">${specs}</div>
-    <div class="rate-box">
-      <div class="rate-label">WHOLESALE RATE</div>
-      <div class="rate">₹ ${p.price} <small>${p.unit}</small></div>
-      ${p.packing ? `<div style="margin-top:12px;font-weight:700">Packing: ${p.packing}</div>` : ""}
-    </div>
     <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX?text=${waText}" target="_blank" rel="noopener">WhatsApp Enquiry</a>`;
   productModal.classList.add("open");
   productModal.setAttribute("aria-hidden","false");
