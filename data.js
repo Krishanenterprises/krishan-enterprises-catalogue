@@ -67,4 +67,5 @@ const products = [
   {id:"KE-TL-053",category:"table-lamp",name:"Led Candle",images:["assets/images/table-lamps/KE-TL-053.jpg"],specs:{Material:"Paraffin Wax",Dimensions:"7.5 x 7.5 x 6.5 cm","Light Source":"LED","Lit Time":"10-12 Hrs"}},
   {id:"KE-TL-054",category:"table-lamp",name:"Sunglow Solar Lamp",images:["assets/images/table-lamps/KE-TL-054.jpg"],specs:{Material:"ABS, Metal",Dimensions:"15.6 x 15.6 x 20 cm","Light Source":"LED","Lit Time":"10-12 Hrs"}},
   {id:"KE-TL-055",category:"table-lamp",name:"Optiglow 3D",images:["assets/images/table-lamps/KE-TL-055.jpg"],specs:{Material:"Acrylic",Dimensions:"8 x 8 x 21 cm","Light Source":"LED","Lit Time":"10-12 Hrs"}},
+  ...Array.from({length:34},(_,i)=>{const n=String(i+1).padStart(3,'0');return {id:`KE-HB-${n}`,category:"corporate-gifting",subcategory:"hand-bags",name:`Hand Bag ${i+1}`,images:[`assets/images/hand-bags/KE-HB-${n}.jpg`],specs:{}}}),
 ];
