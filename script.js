@@ -7,6 +7,21 @@ function imageFallback(img){
   img.onerror = () => { img.onerror = null; img.src = "placeholder.svg"; };
 }
 
+function setupCorporateGifting(){
+  const c = categories.find(x => x.id === "corporate-gifting");
+  if(!c) return;
+  c.subcategories = [
+    {num:"01", id:"hand-bags", name:"Hand Bags"},
+    {num:"02", id:"digital-gifts", name:"Digital Gifts"},
+    {num:"03", id:"coconut-lamps", name:"Coconut Lamps"},
+    {num:"04", id:"diary-sets", name:"Diary Sets"},
+    {num:"05", id:"corporate-gift-sets", name:"Corporate Gift Sets"}
+  ];
+  products.filter(p => p.category === "corporate-gifting" && /^KE-HB-\d+$/.test(p.id)).forEach(p => {
+    p.subcategory = "hand-bags";
+  });
+}
+
 function renderCategories(){
   categoryGrid.innerHTML = categories.map(c => {
     const count = products.filter(p => p.category === c.id).length;
@@ -29,12 +44,14 @@ function openCategory(id){
     }).join("");
     catalogueArea.innerHTML = `<section class="catalog-section" id="${id}"><div class="catalog-head"><div class="eyebrow">SECTION ${c.num}</div><h2>${c.name}</h2><p>${c.description}</p></div><div class="subcategory-grid">${cards}</div></section>`;
   } else renderProductSection(id, null);
-  document.getElementById(id).scrollIntoView({behavior:"smooth", block:"start"});
+  const section = document.getElementById(id);
+  if(section) section.scrollIntoView({behavior:"smooth", block:"start"});
 }
 
 function openSubcategory(categoryId, subcategoryId){
   renderProductSection(categoryId, subcategoryId);
-  document.getElementById(categoryId).scrollIntoView({behavior:"smooth", block:"start"});
+  const section = document.getElementById(categoryId);
+  if(section) section.scrollIntoView({behavior:"smooth", block:"start"});
 }
 
 function renderProductSection(categoryId, subcategoryId){
@@ -67,5 +84,6 @@ function openProduct(id){
 
 function closeModal(){ productModal.classList.remove("open"); productModal.setAttribute("aria-hidden","true"); document.body.classList.remove("modal-open"); }
 document.addEventListener("keydown", e => { if(e.key === "Escape") closeModal(); });
+setupCorporateGifting();
 document.getElementById("productCount").textContent = products.length;
 renderCategories();
