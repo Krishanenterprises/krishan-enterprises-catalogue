@@ -70,7 +70,7 @@ function openProduct(id){
     <div class="modal-code">${p.id}</div>
     <h3 class="modal-title">${p.name}</h3>
     <div class="specs">${specs}</div>
-    <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX?text=${waText}" target="_blank" rel="noopener">WhatsApp Enquiry</a>`;
+    <a class="whatsapp" href="https://wa.me/918130892107?text=${waText}" target="_blank" rel="noopener">WhatsApp Enquiry</a>`;
   productModal.classList.add("open");
   productModal.setAttribute("aria-hidden","false");
   document.body.classList.add("modal-open");
