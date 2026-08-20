@@ -6,6 +6,9 @@ const categoryRenames = {
   "kitchen-products": "Tumbler & Copper Bottles"
 };
 
+// Hide empty categories, apply requested names, then renumber the
+// remaining categories sequentially so the visible catalogue is 01–09.
 categories.splice(0, categories.length, ...categories
   .filter(c => !hiddenCategoryIds.has(c.id))
-  .map(c => ({ ...c, name: categoryRenames[c.id] || c.name })));
+  .map(c => ({ ...c, name: categoryRenames[c.id] || c.name }))
+  .map((c, index) => ({ ...c, num: String(index + 1).padStart(2, "0") })));
