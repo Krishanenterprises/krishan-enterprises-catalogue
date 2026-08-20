@@ -11,11 +11,11 @@ function setupCorporateGifting(){
   const c = categories.find(x => x.id === "corporate-gifting");
   if(!c) return;
   c.subcategories = [
-    {num:"01", id:"hand-bags", name:"Hand Bags"},
-    {num:"02", id:"digital-gifts", name:"Digital Gifts"},
-    {num:"03", id:"coconut-lamps", name:"Coconut Lamps"},
-    {num:"04", id:"diary-sets", name:"Diary Sets"},
-    {num:"05", id:"corporate-gift-sets", name:"Corporate Gift Sets"}
+    {num:"01", id:"hand-bags", name:"Hand Bags", image:"assets/images/category-banners/sub-hand-bags.jpg"},
+    {num:"02", id:"digital-gifts", name:"Digital Gifts", image:"assets/images/category-banners/sub-digital-gifts.jpg"},
+    {num:"03", id:"coconut-lamps", name:"Coconut Lamps", image:"assets/images/category-banners/sub-coconut-lamps.jpg"},
+    {num:"04", id:"diary-sets", name:"Diary Sets", image:"assets/images/category-banners/sub-diary-sets.jpg"},
+    {num:"05", id:"corporate-gift-sets", name:"Corporate Gift Sets", image:"assets/images/category-banners/sub-corporate-gift-sets.jpg"}
   ];
   products.filter(p => p.category === "corporate-gifting" && /^KE-HB-\d+$/.test(p.id)).forEach(p => {
     p.subcategory = "hand-bags";
@@ -37,9 +37,11 @@ function openCategory(id){
   if(c.subcategories){
     const cards = c.subcategories.map(s => {
       const count = products.filter(p => p.category === id && p.subcategory === s.id).length;
-      return `<article class="subcategory-card" onclick="openSubcategory('${id}','${s.id}')">
-        <div class="subcategory-num">${s.num}</div><div class="subcategory-name">${s.name}</div>
-        <div class="subcategory-count">${count ? count+" products" : "Coming soon"}</div><div class="subcategory-arrow">›</div>
+      const bg = s.image ? ` style="background-image:url('${s.image}')"` : "";
+      return `<article class="subcategory-card"${bg} onclick="openSubcategory('${id}','${s.id}')">
+        <div class="subcategory-overlay"></div>
+        <div class="subcategory-content"><div class="subcategory-num">${s.num}</div><div class="subcategory-name">${s.name}</div>
+        <div class="subcategory-count">${count ? count+" products" : "Coming soon"}</div><div class="subcategory-arrow">›</div></div>
       </article>`;
     }).join("");
     catalogueArea.innerHTML = `<section class="catalog-section" id="${id}"><div class="catalog-head"><div class="eyebrow">SECTION ${c.num}</div><h2>${c.name}</h2><p>${c.description}</p></div><div class="subcategory-grid">${cards}</div></section>`;
