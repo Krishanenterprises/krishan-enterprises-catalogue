@@ -37,10 +37,10 @@ function openCategory(id){
   if(c.subcategories){
     const cards = c.subcategories.map(s => {
       const count = products.filter(p => p.category === id && p.subcategory === s.id).length;
-      const bg = s.image ? ` style="background-image:url('${s.image}')"` : "";
+      const bg = s.image ? ` style="background-image:url('${s.image}');background-size:cover;background-position:center;overflow:hidden;"` : "";
       return `<article class="subcategory-card"${bg} onclick="openSubcategory('${id}','${s.id}')">
-        <div class="subcategory-overlay"></div>
-        <div class="subcategory-content"><div class="subcategory-num">${s.num}</div><div class="subcategory-name">${s.name}</div>
+        <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,9,8,.78),rgba(10,9,8,.20));z-index:0;"></div>
+        <div style="position:relative;z-index:1;"><div class="subcategory-num">${s.num}</div><div class="subcategory-name">${s.name}</div>
         <div class="subcategory-count">${count ? count+" products" : "Coming soon"}</div><div class="subcategory-arrow">›</div></div>
       </article>`;
     }).join("");
