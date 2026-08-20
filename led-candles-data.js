@@ -19,7 +19,12 @@ const ledCandleProducts = [
   ["KE-LC-017","RGB LED Candle"],
   ["KE-LC-018","Crystal Candles - White"],
   ["KE-LC-019","Orange LED Candle"],
-  ["KE-LC-020","Flameless LED Candle Set"]
+  ["KE-LC-020","Flameless LED Candle Set"],
+  ["KE-LC-021","LED Pillar Candle"],
+  ["KE-LC-022","LED Fire Candle"],
+  ["KE-LC-023","LED Taper Candle"],
+  ["KE-LC-024","Glass Candle"],
+  ["KE-LC-025","Flickering Candle Set of 3 with Remote"]
 ].map(([id,name]) => ({
   id,
   category:"home-decor",
