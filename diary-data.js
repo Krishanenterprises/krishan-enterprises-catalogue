@@ -1,5 +1,5 @@
 // Diary Sets + Digital Gifts sourced from the uploaded V-series catalogues.
-// Images are intentionally not assumed to exist yet; upload them later under the paths below.
+// Image files are intentionally not assumed to exist yet; upload them later under the paths below.
 
 const diarySetProducts = [
   ["V-401","Executive PU Diary"],["V-402","Executive PU Diary"],["V-403","Executive PU Diary"],["V-404","Executive PU Diary"],["V-405","Executive PU Diary"],["V-406","Executive PU Diary"],["V-407","Executive PU Diary"],["V-409","Executive PU Diary"],["V-410","Executive PU Diary"],["V-412","Executive PU Diary"],["V-413","Premium Vegan Leather Diary"],["V-414","Imported PU Diary"],["V-415","Imported PU Diary"],["V-416","Imported PU Diary"],["V-418","Imported PU Diary"],["V-419","Imported PU Diary"],["V-423","Imported PU Diary"],["V-424","Imported PU Diary"],["V-425","Imported PU Diary"],["V-426","Imported PU Diary"],["V-427","Imported PU Diary"],["V-428","Imported PU Diary"],["V-429","Imported PU Diary"],["V-430","Imported PU Diary"],["V-431","Imported PU Diary"],["V-432","Imported PU Diary"],["V-433","Imported PU Diary"],["V-434","Imported PU Diary"],["V-435","Imported PU Diary"],["V-456","Imported PU Diary"],
@@ -11,28 +11,16 @@ const diarySetProducts = [
 diarySetProducts.forEach((item, i) => {
   const article = item[0];
   const name = `${item[1]} – ${article}`;
-  products.push({
-    id:`KE-DS-${String(i+1).padStart(3,"0")}`,
-    category:"corporate-gifting",
-    subcategory:"diary-sets",
-    name,
-    images:[`assets/images/diary-sets/KE-DS-${String(i+1).padStart(3,"0")}.jpg`],
-    specs:{"Source Article":article}
-  });
+  products.push({id:`KE-DS-${String(i+1).padStart(3,"0")}`,category:"corporate-gifting",subcategory:"diary-sets",name,images:[`assets/images/diary-sets/KE-DS-${String(i+1).padStart(3,"0")}.jpg`],specs:{"Source Article":article}});
 });
 
+// V-906 has 28 pages, but catalogue pages 21 and 22 are the same V-928 article/page.
+// We keep one product for that duplicated source page rather than inventing a second SKU.
 const digitalGiftProducts = [
-  ["V-906","Neck Massager Gift Set"],["V-907","Executive Utility Gift Set"],["V-908","Premium Card Holder & Pen Gift Set"],["V-909","Executive Desk Gift Set"],["V-910","Portable Desk Light Gift Set"],["V-911","Executive Diary & Pen Set"],["V-912","Mobile Stand & Power Bank Gift Set"],["V-913","Bottle, Diary & Keychain Gift Set"],["V-914","Bladeless Fan Gift Set"],["V-916","Portable Fan Gift Set"],["V-917","Travel Organizer Gift Set"],["V-919","Executive Diary & Pen Set"],["V-920","Notebook, Pen & Bottle Gift Set"],["V-921","Executive Diary & Pen Gift Set"],["V-922","Bamboo Diary & Bottle Gift Set"],["V-923","Diary, Pen & Card Holder Gift Set"],["V-924","Diary & Pen Gift Set"],["V-925","Diary & Desk Accessories Gift Set"],["V-926","Diary & Keychain Gift Set"],["V-927","Diary & Pen Gift Set"],["V-928","Bottle, Diary & Keychain Gift Set"],["V-929","Diary, Bottle & Accessories Gift Set"],["V-930","Speaker with Clock Gift Set"],["V-931","Pen Stand & Accessories Gift Set"],["V-932","Diary & Mobile Stand Gift Set"],["V-933","Executive Diary & Pen Set"],["V-934","Executive Diary Gift Set"],["V-935","Executive Diary & Pen Gift Set"]
+  ["V-906","Neck Massager Gift Set"],["V-907","Executive Utility Gift Set"],["V-908","Premium Card Holder & Pen Gift Set"],["V-909","Executive Desk Gift Set"],["V-910","Portable Desk Light Gift Set"],["V-911","Executive Diary & Pen Set"],["V-912","Mobile Stand & Power Bank Gift Set"],["V-913","Bottle, Diary & Keychain Gift Set"],["V-914","Bladeless Fan Gift Set"],["V-916","Portable Fan Gift Set"],["V-917","Travel Organizer Gift Set"],["V-919","Executive Diary & Pen Set"],["V-920","Notebook, Pen & Bottle Gift Set"],["V-921","Executive Diary & Pen Gift Set"],["V-922","Bamboo Diary & Bottle Gift Set"],["V-923","Diary, Pen & Card Holder Gift Set"],["V-924","Diary & Pen Gift Set"],["V-925","Diary & Desk Accessories Gift Set"],["V-926","Diary & Keychain Gift Set"],["V-927","Diary & Pen Gift Set"],["V-928","Bottle, Diary & Keychain Gift Set"],["V-929","Diary, Bottle & Accessories Gift Set"],["V-930","Speaker with Clock Gift Set"],["V-931","Pen Stand & Accessories Gift Set"],["V-932","Diary & Mobile Stand Gift Set"],["V-933","Executive Diary & Pen Set"],["V-935","Executive Diary & Pen Gift Set"]
 ];
 
 digitalGiftProducts.forEach((item, i) => {
   const article = item[0];
-  products.push({
-    id:`KE-DG-${String(i+1).padStart(3,"0")}`,
-    category:"corporate-gifting",
-    subcategory:"digital-gifts",
-    name:`${item[1]} – ${article}`,
-    images:[`assets/images/digital-gifts/KE-DG-${String(i+1).padStart(3,"0")}.jpg`],
-    specs:{"Source Article":article}
-  });
+  products.push({id:`KE-DG-${String(i+1).padStart(3,"0")}`,category:"corporate-gifting",subcategory:"digital-gifts",name:`${item[1]} – ${article}`,images:[`assets/images/digital-gifts/KE-DG-${String(i+1).padStart(3,"0")}.jpg`],specs:{"Source Article":article}});
 });
