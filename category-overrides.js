@@ -6,14 +6,14 @@ const categoryRenames = {
   "kitchen-products": "Tumbler & Copper Bottles"
 };
 const categoryBannerImages = {
-  "diwali-lights": "assets/images/category-banners/cat-01-diwali-lights.jpg",
-  "home-decor": "assets/images/category-banners/cat-led-candles.jpg",
-  "table-lamp": "assets/images/category-banners/cat-03-table-lamps.jpg",
-  "corporate-gifting": "assets/images/category-banners/cat-corporate-gifting.jpg",
-  "metal-gifting": "assets/images/category-banners/cat-05-metal-gifting.jpg",
-  "decorative-items": "assets/images/category-banners/cat-06-decorative-items.jpg",
-  "kitchen-products": "assets/images/category-banners/cat-tumbler-copper-bottles.jpg",
-  "gifting-boxes": "assets/images/category-banners/cat-08-gifting-boxes.jpg"
+  "diwali-lights": "assets/images/category-banners/cat-01-diwali-lights.jpg?v=20260820b",
+  "home-decor": "assets/images/category-banners/cat-led-candles.jpg?v=20260820b",
+  "table-lamp": "assets/images/category-banners/cat-03-table-lamps.jpg?v=20260820b",
+  "corporate-gifting": "assets/images/category-banners/cat-corporate-gifting.jpg?v=20260820b",
+  "metal-gifting": "assets/images/category-banners/cat-05-metal-gifting.jpg?v=20260820b",
+  "decorative-items": "assets/images/category-banners/cat-06-decorative-items.jpg?v=20260820b",
+  "kitchen-products": "assets/images/category-banners/cat-tumbler-copper-bottles.jpg?v=20260820b",
+  "gifting-boxes": "assets/images/category-banners/cat-08-gifting-boxes.jpg?v=20260820b"
 };
 
 // Hide unused categories, apply requested names/banners, then renumber
