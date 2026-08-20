@@ -1,6 +1,6 @@
 // Catalogue category updates requested by Krishan Enterprises.
-// Personal Care is intentionally hidden because there are no products for it currently.
-const hiddenCategoryIds = new Set(["personal-care"]);
+// Personal Care and Decorative Boxes are intentionally hidden/removed.
+const hiddenCategoryIds = new Set(["personal-care", "decorative-boxes"]);
 const categoryRenames = {
   "home-decor": "LED Candles",
   "kitchen-products": "Tumbler & Copper Bottles"
@@ -11,8 +11,8 @@ const categoryBannerImages = {
   "kitchen-products": "assets/images/category-banners/cat-tumbler-copper-bottles.jpg"
 };
 
-// Hide the unused category, apply requested names/banners, then renumber
-// the remaining visible catalogue sequentially from 01 to 09.
+// Hide unused categories, apply requested names/banners, then renumber
+// the remaining visible catalogue sequentially from 01 to 08.
 categories.splice(0, categories.length, ...categories
   .filter(c => !hiddenCategoryIds.has(c.id))
   .map(c => ({
