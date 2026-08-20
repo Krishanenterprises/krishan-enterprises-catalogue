@@ -1,0 +1,38 @@
+// Diary Sets + Digital Gifts sourced from the uploaded V-series catalogues.
+// Images are intentionally not assumed to exist yet; upload them later under the paths below.
+
+const diarySetProducts = [
+  ["V-401","Executive PU Diary"],["V-402","Executive PU Diary"],["V-403","Executive PU Diary"],["V-404","Executive PU Diary"],["V-405","Executive PU Diary"],["V-406","Executive PU Diary"],["V-407","Executive PU Diary"],["V-409","Executive PU Diary"],["V-410","Executive PU Diary"],["V-412","Executive PU Diary"],["V-413","Premium Vegan Leather Diary"],["V-414","Imported PU Diary"],["V-415","Imported PU Diary"],["V-416","Imported PU Diary"],["V-418","Imported PU Diary"],["V-419","Imported PU Diary"],["V-423","Imported PU Diary"],["V-424","Imported PU Diary"],["V-425","Imported PU Diary"],["V-426","Imported PU Diary"],["V-427","Imported PU Diary"],["V-428","Imported PU Diary"],["V-429","Imported PU Diary"],["V-430","Imported PU Diary"],["V-431","Imported PU Diary"],["V-432","Imported PU Diary"],["V-433","Imported PU Diary"],["V-434","Imported PU Diary"],["V-435","Imported PU Diary"],["V-456","Imported PU Diary"],
+  ["V-457","Executive PU Diary"],["V-458","Executive PU Diary"],["V-701","Premium PU Diary"],["V-702","Premium PU Diary"],["V-703","Premium PU Diary"],["V-704","Premium PU Diary"],["V-704A","Premium PU Diary"],["V-706","Premium PU Diary"],["V-707","Premium PU Diary"],["V-708","Premium PU Diary"],["V-709","Premium PU Diary"],["V-710","Premium PU Diary"],["V-711","Premium PU Diary"],["V-712","Premium PU Diary"],["V-713","Premium PU Diary"],["V-714","Premium PU Diary"],["V-715","Premium PU Diary"],["V-716","Premium PU Diary"],["V-717","Premium PU Diary"],["V-718","Premium PU Diary"],["V-719","Premium PU Diary"],["V-720","Premium PU Diary"],["V-721","Premium PU Diary"],["V-722","Premium PU Diary"],["V-723","Premium PU Diary"],["V-724","Premium PU Diary"],["V-725","Premium PU Diary"],["V-726","Premium PU Diary"],["V-728","Premium PU Diary"],["V-729","Premium PU Diary"],
+  ["V-730","Premium PU Diary"],["V-731","Premium PU Diary"],["V-732","Premium PU Diary"],["V-733","Premium PU Diary"],["V-734","Premium PU Diary"],["V-735","Premium PU Diary"],["V-736","Premium PU Diary"],["V-737","Premium PU Diary"],["V-738","Premium PU Diary"],["V-739","Premium PU Diary"],["V-740","Premium PU Diary"],["V-741","Premium PU Diary"],["V-742","Premium PU Diary"],["V-743","Premium PU Diary"],["V-744","Premium PU Diary"],["V-745","Premium PU Diary"],["V-746","Premium PU Diary"],["V-747","Premium PU Diary"],["V-748","Premium PU Diary"],["V-749","Premium PU Diary"],["V-750","Premium PU Diary"],["V-751","Premium PU Diary"],["V-752","Premium PU Diary"],["V-753","Premium PU Diary"],["V-754","Premium PU Diary"],["V-755","Premium PU Diary"],["V-756","Premium PU Diary"],["V-757","Premium PU Diary"],["V-758","Premium PU Diary"],["V-770","Premium PU Diary"],
+  ["V-771","Premium PU Diary"],["V-773","Premium PU Diary"],["V-776","Premium PU Diary"],["V-778","Premium PU Diary"],["V-782","Premium PU Diary"],["V-785","Premium PU Diary"],["V-795","Premium PU Diary"],["V-796","Premium PU Diary"],["V-797","Premium PU Diary"],["V-798","Premium PU Diary"],["V-801","Premium PU Diary"],["V-802","Premium PU Diary"],["V-803","Premium PU Diary"],["V-804","Premium PU Diary"],["V-805","Premium PU Diary"],["V-806","Premium PU Diary"],["V-807","Premium PU Diary"],["V-808","Premium PU Diary"],["V-809","Premium PU Diary"],["V-810","Premium PU Diary"],["V-812","Premium PU Diary"],["V-814","Premium PU Diary"],["V-815","Premium PU Diary"],["V-816","Premium PU Diary"],["V-817","Premium PU Diary"],["V-901","Premium PU Diary"],["V-902","Premium PU Diary"],["V-903","Premium PU Diary"],["V-904","Premium PU Diary"],["V-905","Premium PU Diary"]
+];
+
+diarySetProducts.forEach((item, i) => {
+  const article = item[0];
+  const name = `${item[1]} – ${article}`;
+  products.push({
+    id:`KE-DS-${String(i+1).padStart(3,"0")}`,
+    category:"corporate-gifting",
+    subcategory:"diary-sets",
+    name,
+    images:[`assets/images/diary-sets/KE-DS-${String(i+1).padStart(3,"0")}.jpg`],
+    specs:{"Source Article":article}
+  });
+});
+
+const digitalGiftProducts = [
+  ["V-906","Neck Massager Gift Set"],["V-907","Executive Utility Gift Set"],["V-908","Premium Card Holder & Pen Gift Set"],["V-909","Executive Desk Gift Set"],["V-910","Portable Desk Light Gift Set"],["V-911","Executive Diary & Pen Set"],["V-912","Mobile Stand & Power Bank Gift Set"],["V-913","Bottle, Diary & Keychain Gift Set"],["V-914","Bladeless Fan Gift Set"],["V-916","Portable Fan Gift Set"],["V-917","Travel Organizer Gift Set"],["V-919","Executive Diary & Pen Set"],["V-920","Notebook, Pen & Bottle Gift Set"],["V-921","Executive Diary & Pen Gift Set"],["V-922","Bamboo Diary & Bottle Gift Set"],["V-923","Diary, Pen & Card Holder Gift Set"],["V-924","Diary & Pen Gift Set"],["V-925","Diary & Desk Accessories Gift Set"],["V-926","Diary & Keychain Gift Set"],["V-927","Diary & Pen Gift Set"],["V-928","Bottle, Diary & Keychain Gift Set"],["V-929","Diary, Bottle & Accessories Gift Set"],["V-930","Speaker with Clock Gift Set"],["V-931","Pen Stand & Accessories Gift Set"],["V-932","Diary & Mobile Stand Gift Set"],["V-933","Executive Diary & Pen Set"],["V-934","Executive Diary Gift Set"],["V-935","Executive Diary & Pen Gift Set"]
+];
+
+digitalGiftProducts.forEach((item, i) => {
+  const article = item[0];
+  products.push({
+    id:`KE-DG-${String(i+1).padStart(3,"0")}`,
+    category:"corporate-gifting",
+    subcategory:"digital-gifts",
+    name:`${item[1]} – ${article}`,
+    images:[`assets/images/digital-gifts/KE-DG-${String(i+1).padStart(3,"0")}.jpg`],
+    specs:{"Source Article":article}
+  });
+});
